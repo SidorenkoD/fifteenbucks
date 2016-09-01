@@ -1,0 +1,6 @@
+user_one = User.create!(name: 'douche')
+user_two = User.create!(name: 'dork')
+user_one.orders.create!(title: 'douche_stuff', amount: 19.99)
+user_one.orders.create!(title: 'another_douche_stuff', amount: 49.99)
+user_two.orders.create!(title: 'dork_stuff', amount: 100)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
