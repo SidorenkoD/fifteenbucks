@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20160901194949) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "orders", force: true do |t|
-    t.string  "title",               null: false
+    t.string  "title",   null: false
     t.decimal "amount"
     t.integer "user_id"
     t.integer "status",  default: 0
