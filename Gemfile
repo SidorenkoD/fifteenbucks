@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'pg', '~> 0.18.4'
 gem 'devise'
+gem 'stripe'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
