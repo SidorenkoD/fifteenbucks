@@ -10,12 +10,10 @@ ActiveAdmin.register Order do
   end
 
   member_action :pay, :method => :get do
-    order = Order.find_by(id: params[:id])
-    return redirect_to :back, notice: I18n.t('.not_found', instance: I18n.t('.order')) unless order
-    card = order.user.try(:card_token)
+    card = resource.user&.card_token
     return redirect_to :back, notice: I18n.t('.not_found', instance: I18n.t('.card')) unless card
-    Stripe::Charge.create(amount: order.in_cents, currency: 'usd', customer: card)
-    order.update(status: 'paid')
+    Stripe::Charge.create(amount: resource.in_cents, currency: 'usd', customer: card)
+    resource.paid!
     redirect_to :back, notice: I18n.t('.success')
   end
 end

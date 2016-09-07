@@ -9,3 +9,4 @@ en:
   order: 'Order'
   card: 'Card'
   success: 'Order has been paid'
+  admin_details: 'Admin Details'
